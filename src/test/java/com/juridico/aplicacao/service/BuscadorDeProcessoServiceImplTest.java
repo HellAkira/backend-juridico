@@ -62,7 +62,7 @@ class BuscadorDeProcessoServiceImplTest {
 
         buscadorDeProcessoService.buscarPorId(idProcesso);
 
-        verify(modelMapper).map(eq(processoEntity), eq(Processo.class));
+        verify(modelMapper).map(processoEntity, Processo.class);
     }
 
 
