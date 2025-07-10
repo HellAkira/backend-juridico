@@ -1,7 +1,7 @@
 #  Backend Jurídico
 
 API RESTful para gerenciamento de processos jurídicos, construída em Spring Boot.
-Este sistema permite o cadastro
+
 • Gerenciar processos jurídicos: criar, editar, consultar e arquivar um ou mais
 processos.
 • Gerenciar partes envolvidas: cada processo deve permitir o registro de uma ou
