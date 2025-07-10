@@ -52,7 +52,9 @@ Java 24 ou superior instalado e configurado no sistema
 
 Apache Maven 3.9.10 instalado e configurado no PATH
 
-# Subir o banco PostgreSQL
+Docker instalado e configurado
+
+# Subir o banco PostgreSQL via Docker
 No Windows, para iniciar o banco PostgreSQL, execute o script .bat que está na pasta banco/db:
 
 ```
