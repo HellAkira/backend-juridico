@@ -21,6 +21,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -148,5 +149,35 @@ class AtualizadorDeProcessoServiceImplTest {
         Processo processoRetornado = atualizadorDeProcessoService.atualizar(processo);
 
         assertEquals(processoMapeado, processoRetornado);
+    }
+
+    @Test
+    void deve_adicionar_nova_acao_quando_id_nao_existir_em_processo_entity() {
+        processoEntity.setAcoes(new ArrayList<>());
+        when(processoRepository.findById(processo.getId())).thenReturn(Optional.of(processoEntity));
+        when(acaoMapper.paraEntidade(acao)).thenReturn(acaoEntity);
+        when(parteEnvolvidaMapper.paraEntidade(parteEnvolvida)).thenReturn(parteEnvolvidaEntity);
+
+        atualizadorDeProcessoService.atualizar(processo);
+
+        verify(processoRepository).save(argumentCaptor.capture());
+        ProcessoEntity capturado = argumentCaptor.getValue();
+        assertEquals(1, capturado.getAcoes().size());
+        assertEquals(acaoEntity, capturado.getAcoes().getFirst());
+    }
+
+    @Test
+    void deve_adicionar_nova_parte_envolvida_quando_id_nao_existir_em_processo_entity() {
+        processoEntity.setPartesEnvolvidas(new ArrayList<>());
+        when(processoRepository.findById(processo.getId())).thenReturn(Optional.of(processoEntity));
+        when(acaoMapper.paraEntidade(acao)).thenReturn(acaoEntity);
+        when(parteEnvolvidaMapper.paraEntidade(parteEnvolvida)).thenReturn(parteEnvolvidaEntity);
+
+        atualizadorDeProcessoService.atualizar(processo);
+
+        verify(processoRepository).save(argumentCaptor.capture());
+        ProcessoEntity capturado = argumentCaptor.getValue();
+        assertEquals(1, capturado.getPartesEnvolvidas().size());
+        assertEquals(parteEnvolvidaEntity, capturado.getPartesEnvolvidas().getFirst());
     }
 }

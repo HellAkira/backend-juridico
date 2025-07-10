@@ -81,6 +81,20 @@ class ProcessoMapperTest {
     }
 
     @Test
+    void deve_mapear_para_dominio_quando_acoes_e_partes_forem_nulos() {
+        entidade.setAcoes(null);
+        entidade.setPartesEnvolvidas(null);
+
+        Processo dominioMapeado = processoMapper.paraDominio(entidade);
+
+        assertNotNull(dominioMapeado);
+        assertEquals(entidade.getId(), dominioMapeado.getId());
+        assertEquals(entidade.getStatus(), dominioMapeado.getStatus());
+        assertEquals(entidade.getDescricaoDoCaso(), dominioMapeado.getDescricaoDoCaso());
+        assertEquals(entidade.getDataDeAbertura(), dominioMapeado.getDataDeAbertura());
+    }
+
+    @Test
     void deve_mapear_para_dto() {
         when(acaoMapper.paraDTO(acaoDominio)).thenReturn(acaoDTO);
         when(parteEnvolvidaMapper.paraDTO(parteDominio)).thenReturn(parteDTO);
@@ -97,6 +111,21 @@ class ProcessoMapperTest {
     }
 
     @Test
+    void deve_mapear_para_dto_quando_acoes_e_partes_forem_nulos() {
+        processo.setAcoes(null);
+        processo.setPartesEnvolvidas(null);
+
+        ProcessoDTO dtoMapeada = processoMapper.paraDTO(processo);
+
+        assertNotNull(dtoMapeada);
+        assertEquals(processo.getId(), dtoMapeada.getId());
+        assertEquals(processo.getStatus(), dtoMapeada.getStatusProcesso());
+        assertEquals(processo.getDescricaoDoCaso(), dtoMapeada.getDescricaoDoCaso());
+        assertEquals(processo.getDataDeAbertura(), dtoMapeada.getDataDeAbertura());
+    }
+
+
+    @Test
     void deve_mapear_para_entidade() {
         when(acaoMapper.paraEntidade(acaoDominio)).thenReturn(acaoEntity);
         when(parteEnvolvidaMapper.paraEntidade(parteDominio)).thenReturn(parteEntity);
@@ -111,4 +140,19 @@ class ProcessoMapperTest {
         verify(acaoMapper).paraEntidade(acaoDominio);
         verify(parteEnvolvidaMapper).paraEntidade(parteDominio);
     }
+
+    @Test
+    void deve_mapear_para_entidade_quando_acoes_e_partes_forem_nulos() {
+        processo.setAcoes(null);
+        processo.setPartesEnvolvidas(null);
+
+        ProcessoEntity entidadeMapeada = processoMapper.paraEntidade(processo);
+
+        assertNotNull(entidadeMapeada);
+        assertEquals(processo.getId(), entidadeMapeada.getId());
+        assertEquals(processo.getStatus(), entidadeMapeada.getStatus());
+        assertEquals(processo.getDescricaoDoCaso(), entidadeMapeada.getDescricaoDoCaso());
+        assertEquals(processo.getDataDeAbertura(), entidadeMapeada.getDataDeAbertura());
+    }
+
 }

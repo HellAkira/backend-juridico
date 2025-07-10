@@ -30,13 +30,13 @@ public class AtualizadorDeProcessoServiceImpl implements AtualizadorDeProcessoSe
         processoEntity.setStatus(processo.getStatus());
         processoEntity.setDescricaoDoCaso(processo.getDescricaoDoCaso());
         processoEntity.setDataDeAbertura(processo.getDataDeAbertura());
-        alterarAcoes(processo, processoEntity);
-        alterarPartesEnvolvidas(processo, processoEntity);
+        atualizarAcoes(processo, processoEntity);
+        atualizarPartesEnvolvidas(processo, processoEntity);
         ProcessoEntity processoSalvo = processoRepository.save(processoEntity);
         return processoMapper.paraDominio(processoSalvo);
     }
 
-    private void alterarPartesEnvolvidas(Processo processo, ProcessoEntity processoEntity) {
+    private void atualizarPartesEnvolvidas(Processo processo, ProcessoEntity processoEntity) {
         processo.getPartesEnvolvidas().forEach(parte -> {
             var parteEntity = parteEnvolvidaMapper.paraEntidade(parte);
             if (processoEntity.getPartesEnvolvidas().stream().noneMatch(p -> Objects.equals(parteEntity.getId(), p.getId()))) {
@@ -45,7 +45,7 @@ public class AtualizadorDeProcessoServiceImpl implements AtualizadorDeProcessoSe
         });
     }
 
-    private void alterarAcoes(Processo processo, ProcessoEntity processoEntity) {
+    private void atualizarAcoes(Processo processo, ProcessoEntity processoEntity) {
         processo.getAcoes().forEach(acao -> {
             var acaoEntity = acaoMapper.paraEntidade(acao);
             if (processoEntity.getAcoes().stream().noneMatch(a -> Objects.equals(acaoEntity.getId(), a.getId()))) {
