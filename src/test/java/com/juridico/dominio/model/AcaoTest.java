@@ -10,10 +10,10 @@ class AcaoTest {
 
     @Test
     void deve_criar_acao_com_tipo_data_registro_e_descricao_passados() {
-        var tipoAcao = Instancio.of(TipoAcao.class).create();
-        var descricao = Instancio.of(String.class).create();
+        TipoAcao tipoAcao = Instancio.of(TipoAcao.class).create();
+        String descricao = Instancio.of(String.class).create();
 
-        var acao = new Acao(tipoAcao, descricao);
+        Acao acao = new Acao(tipoAcao, descricao);
 
         Assertions.assertEquals(tipoAcao, acao.getTipo());
         Assertions.assertEquals(descricao, acao.getDescricao());

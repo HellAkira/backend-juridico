@@ -87,7 +87,7 @@ class CriadorDeParteEnvolvidaImplTest {
         when(buscadorDeProcessoService.buscarPorId(idProcesso)).thenReturn(processoBuscado);
         when(atualizadorDeProcessoService.atualizar(processoBuscado)).thenReturn(processoSalvo);
 
-        ParteEnvolvida parteEnvolvidaRetornada = criadorDePartesEnvolvidas.criar(parteEnvolvidaParams, idProcesso).getFirst();
+        ParteEnvolvida parteEnvolvidaRetornada = criadorDePartesEnvolvidas.criar(parteEnvolvidaParams, idProcesso).stream().findFirst().orElseThrow();
 
         assertEquals(parteEnvolvidaSalva, parteEnvolvidaRetornada);
     }

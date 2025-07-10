@@ -121,7 +121,7 @@ class AtualizadorDeProcessoServiceImplTest {
 
         verify(processoRepository).save(argumentCaptor.capture());
         ProcessoEntity capturado = argumentCaptor.getValue();
-        assertEquals(acaoEntity, capturado.getAcoes().getFirst());
+        assertEquals(acaoEntity, capturado.getAcoes().stream().findFirst().orElseThrow());
     }
 
     @Test
@@ -134,7 +134,7 @@ class AtualizadorDeProcessoServiceImplTest {
 
         verify(processoRepository).save(argumentCaptor.capture());
         ProcessoEntity capturado = argumentCaptor.getValue();
-        assertEquals(parteEnvolvidaEntity, capturado.getPartesEnvolvidas().getFirst());
+        assertEquals(parteEnvolvidaEntity, capturado.getPartesEnvolvidas().stream().findFirst().orElseThrow());
     }
 
     @Test
@@ -163,7 +163,7 @@ class AtualizadorDeProcessoServiceImplTest {
         verify(processoRepository).save(argumentCaptor.capture());
         ProcessoEntity capturado = argumentCaptor.getValue();
         assertEquals(1, capturado.getAcoes().size());
-        assertEquals(acaoEntity, capturado.getAcoes().getFirst());
+        assertEquals(acaoEntity, capturado.getAcoes().stream().findFirst().orElseThrow());
     }
 
     @Test
@@ -178,6 +178,6 @@ class AtualizadorDeProcessoServiceImplTest {
         verify(processoRepository).save(argumentCaptor.capture());
         ProcessoEntity capturado = argumentCaptor.getValue();
         assertEquals(1, capturado.getPartesEnvolvidas().size());
-        assertEquals(parteEnvolvidaEntity, capturado.getPartesEnvolvidas().getFirst());
+        assertEquals(parteEnvolvidaEntity, capturado.getPartesEnvolvidas().stream().findFirst().orElseThrow());
     }
 }

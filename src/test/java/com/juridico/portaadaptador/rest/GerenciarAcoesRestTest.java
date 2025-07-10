@@ -16,6 +16,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.modelmapper.ModelMapper;
 
 import java.util.Collections;
+import java.util.List;
 
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -63,10 +64,10 @@ class GerenciarAcoesRestTest {
         when(criadorDeAcoes.criar(acaoParams, idProcesso)).thenReturn(Collections.singletonList(acao));
         when(modelMapper.map(acao, AcaoDTO.class)).thenReturn(acaoDTO);
 
-        var acoesRetornadas = gerenciarAcoesRest.criar(acaoParams, idProcesso).getBody();
+        List<AcaoDTO> acoesRetornadas = gerenciarAcoesRest.criar(acaoParams, idProcesso).getBody();
 
         Assertions.assertNotNull(acoesRetornadas);
-        AcaoDTO acaoRetornada = acoesRetornadas.getFirst();
+        AcaoDTO acaoRetornada = acoesRetornadas.stream().findFirst().orElseThrow();
         Assertions.assertEquals(acaoDTO.getDescricao(), acaoRetornada.getDescricao());
         Assertions.assertEquals(acaoDTO.getTipo(), acaoRetornada.getTipo());
     }

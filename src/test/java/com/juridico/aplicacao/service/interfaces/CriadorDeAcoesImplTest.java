@@ -81,7 +81,7 @@ class CriadorDeAcoesImplTest {
         when(buscadorDeProcessoService.buscarPorId(idProcesso)).thenReturn(processoBuscado);
         when(atualizadorDeProcessoService.atualizar(processoBuscado)).thenReturn(processoSalvo);
 
-        Acao acaoRetornada = criadorDeAcoes.criar(acaoParams, idProcesso).getFirst();
+        Acao acaoRetornada = criadorDeAcoes.criar(acaoParams, idProcesso).stream().findFirst().orElseThrow();
 
         assertEquals(acaoSalva, acaoRetornada);
     }

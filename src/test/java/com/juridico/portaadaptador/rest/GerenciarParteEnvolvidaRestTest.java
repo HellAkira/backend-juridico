@@ -63,10 +63,11 @@ class GerenciarParteEnvolvidaRestTest {
         when(criadorDePartesEnvolvidas.criar(parteEnvolvidaParams, idProcesso)).thenReturn(List.of(parteEnvolvida));
         when(modelMapper.map(parteEnvolvida, ParteEnvolvidaDTO.class)).thenReturn(parteEnvolvidaDTO);
 
-        var parteEnvolvidaDTO = gerenciarParteEnvolvidaRest.criar(parteEnvolvidaParams, idProcesso).getBody();
+        List<ParteEnvolvidaDTO> parteEnvolvidaDTORetorno = gerenciarParteEnvolvidaRest.criar(parteEnvolvidaParams, idProcesso).getBody();
 
         Assertions.assertNotNull(parteEnvolvidaDTO);
-        ParteEnvolvidaDTO parteEnvolvidaRetornada = parteEnvolvidaDTO.getFirst();
+        Assertions.assertNotNull(parteEnvolvidaDTORetorno);
+        ParteEnvolvidaDTO parteEnvolvidaRetornada = parteEnvolvidaDTORetorno.stream().findFirst().orElseThrow();
         Assertions.assertEquals(this.parteEnvolvidaDTO.getCpfCnpj(), parteEnvolvidaRetornada.getCpfCnpj());
         Assertions.assertEquals(this.parteEnvolvidaDTO.getNome(), parteEnvolvidaRetornada.getNome());
         Assertions.assertEquals(this.parteEnvolvidaDTO.getEmail(), parteEnvolvidaRetornada.getEmail());

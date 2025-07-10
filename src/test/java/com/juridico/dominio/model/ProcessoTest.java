@@ -104,7 +104,7 @@ class ProcessoTest {
 
         processo.adicionarAcao(tipo, descricaoDaAcao);
 
-        Acao acaoAdicionada = processo.getAcoes().getFirst();
+        Acao acaoAdicionada = processo.getAcoes().stream().findFirst().orElseThrow();
         Assertions.assertEquals(tipo, acaoAdicionada.getTipo());
         Assertions.assertEquals(descricaoDaAcao, acaoAdicionada.getDescricao());
     }
@@ -135,7 +135,7 @@ class ProcessoTest {
 
         processo.adicionarParteEnvolvida(nome, cpfCnpj, telefone, email, tipoParteEnvolvida);
 
-        ParteEnvolvida acaoAdicionada = processo.getPartesEnvolvidas().getFirst();
+        ParteEnvolvida acaoAdicionada = processo.getPartesEnvolvidas().stream().findFirst().orElseThrow();
         Assertions.assertEquals(nome, acaoAdicionada.getNome());
         Assertions.assertEquals(cpfCnpj, acaoAdicionada.getCpfCnpj());
         Assertions.assertEquals(telefone, acaoAdicionada.getTelefone());
