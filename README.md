@@ -18,9 +18,13 @@ O projeto adota a Arquitetura Limpa (Clean Architecture), com o objetivo de mant
 
 # Camadas:
 Aplicacao: Contém os serviços responsáveis pela lógica de negócio. Aqui estão também os DTOs usados para transportar dados entre as camadas.
+
 Dominio: Representa o núcleo da aplicação. Define os modelos de domínio e concentra as regras de negócio fundamentais.
+
 PortaAdaptador: Camada de integração com o mundo externo.
+
 Config: Contém as configurações gerais do sistema.
+
 
 # Diagrama de Classes do Dominio
 <img width="1287" height="673" alt="image" src="https://github.com/user-attachments/assets/05a489c8-9b63-4a45-a121-e87dd494644a" />
@@ -43,7 +47,9 @@ Config: Contém as configurações gerais do sistema.
 
 ##  Como Rodar o Projeto
 Pré-requisitos
+
 Java 24 ou superior instalado e configurado no sistema
+
 Apache Maven 3.9.10 instalado e configurado no PATH
 
 # Subir o banco PostgreSQL
@@ -64,6 +70,7 @@ mvn spring-boot:run
 
 # Acessar a API LOCALMENTE
 API disponível em: http://localhost:8080
+
 Documentação Swagger UI: http://localhost:8080/swagger-ui.html
 
 
