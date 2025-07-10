@@ -19,6 +19,9 @@ Dominio: Representa o núcleo da aplicação. Define os modelos de domínio e co
 PortaAdaptador: Camada de integração com o mundo externo.
 Config: Contém as configurações gerais do sistema.
 
+# Diagrama de Classes do Dominio
+<img width="1417" height="757" alt="image" src="https://github.com/user-attachments/assets/98c7d67b-eaa5-49ce-89fb-559027419f97" />
+
 ##  Tecnologias Utilizadas
 - **Java 24**
 - **Spring Boot**
