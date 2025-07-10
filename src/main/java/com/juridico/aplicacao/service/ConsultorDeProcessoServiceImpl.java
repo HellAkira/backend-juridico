@@ -22,9 +22,9 @@ public class ConsultorDeProcessoServiceImpl implements ConsultorDeProcessoServic
     private final ProcessoMapper processoMapper;
 
     @Override
-    public List<Processo> consultarProcesso(String cpfCnpj,
-                                            StatusProcesso statusProcesso,
-                                            LocalDate dataDeAbertura) {
+    public List<Processo> consultarProcessos(String cpfCnpj,
+                                             StatusProcesso statusProcesso,
+                                             LocalDate dataDeAbertura) {
         var processos = processoRepository.findAll(ProcessoSpecifications.comFiltro(cpfCnpj, statusProcesso, dataDeAbertura));
         if (processos.isEmpty()) {
             throw new NoSuchElementException("Não foi encontrado um processo para parametros");

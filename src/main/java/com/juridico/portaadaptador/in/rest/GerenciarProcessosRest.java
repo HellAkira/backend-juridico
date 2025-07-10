@@ -26,7 +26,7 @@ public class GerenciarProcessosRest {
 
     private final CriadorDeProcessoService criadorDeProcessoService;
     private final EditorDeProcessoService editadorDeProcessoService;
-    private final ConsultorDeProcessoService consultorDeProcessoService;
+    private final ConsultorDeProcessoService consultorDeProcessosService;
     private final ArquivadorDeProcessoService arquivadorDeProcessoService;
     private final ProcessoMapper processoMapper;
 
@@ -46,15 +46,15 @@ public class GerenciarProcessosRest {
         return ResponseEntity.ok(processoMapper.paraDTO(processo));
     }
 
-    @Operation(summary = "Consulta um processo existente.")
+    @Operation(summary = "Consulta processos existentes.")
     @GetMapping("/consultar")
-    public ResponseEntity<List<ProcessoDTO>> consultarProcesso(@Parameter(description = "CPF ou CNPJ do processo.", example = "00000000000")
+    public ResponseEntity<List<ProcessoDTO>> consultarProcessos(@Parameter(description = "CPF ou CNPJ do processo.", example = "00000000000")
                                                                @RequestParam(required = false) String cpfCnpj,
-                                                               @Parameter(description = "Status do processo. [ATIVO, SUSPENSO ,ARQUIVADO]", example = "ATIVO")
+                                                                @Parameter(description = "Status do processo. [ATIVO, SUSPENSO ,ARQUIVADO]", example = "ATIVO")
                                                                @RequestParam(required = false) StatusProcesso statusProcesso,
-                                                               @Parameter(description = "Data de abertura do processo.", example = "2023-05-15")
+                                                                @Parameter(description = "Data de abertura do processo.", example = "2023-05-15")
                                                                @RequestParam(required = false) LocalDate dataDeAbertura) {
-        List<Processo> processos = consultorDeProcessoService.consultarProcesso(cpfCnpj, statusProcesso, dataDeAbertura);
+        List<Processo> processos = consultorDeProcessosService.consultarProcessos(cpfCnpj, statusProcesso, dataDeAbertura);
         return ResponseEntity.ok(processos.stream().map(processoMapper::paraDTO).toList());
     }
 

@@ -135,19 +135,19 @@ class GerenciarProcessosRestTest {
     @Test
     void deve_chamar_o_consultor_de_processos() {
 
-        gerenciarProcessosRest.consultarProcesso(cpfCnpj, status, dataDeAbertura);
+        gerenciarProcessosRest.consultarProcessos(cpfCnpj, status, dataDeAbertura);
 
-        Mockito.verify(consultorDeProcessoService).consultarProcesso(cpfCnpj, status, dataDeAbertura);
+        Mockito.verify(consultorDeProcessoService).consultarProcessos(cpfCnpj, status, dataDeAbertura);
     }
 
     @Test
     void deve_retornar_processo_quando_encontrar_processo_na_consulta() {
         var processo = Instancio.of(Processo.class).create();
         when(processoMapper.paraDTO(processo)).thenReturn(processoDTO);
-        when(consultorDeProcessoService.consultarProcesso(cpfCnpj, status, dataDeAbertura))
+        when(consultorDeProcessoService.consultarProcessos(cpfCnpj, status, dataDeAbertura))
                 .thenReturn(Collections.singletonList(processo));
 
-        var processoRetornado = gerenciarProcessosRest.consultarProcesso(cpfCnpj, status, dataDeAbertura).getBody();
+        var processoRetornado = gerenciarProcessosRest.consultarProcessos(cpfCnpj, status, dataDeAbertura).getBody();
 
         Assertions.assertNotNull(processoRetornado);
     }
@@ -155,10 +155,10 @@ class GerenciarProcessosRestTest {
     @Test
     void deve_retornar_OK_quando_encontrar_processo_na_consulta() {
         var processoEsperado = Instancio.of(Processo.class).create();
-        when(consultorDeProcessoService.consultarProcesso(cpfCnpj, status, dataDeAbertura))
+        when(consultorDeProcessoService.consultarProcessos(cpfCnpj, status, dataDeAbertura))
                 .thenReturn(Collections.singletonList(processoEsperado));
 
-        var statusCodeRetornado = gerenciarProcessosRest.consultarProcesso(cpfCnpj, status, dataDeAbertura).getStatusCode();
+        var statusCodeRetornado = gerenciarProcessosRest.consultarProcessos(cpfCnpj, status, dataDeAbertura).getStatusCode();
 
         Assertions.assertEquals(HttpStatus.OK, statusCodeRetornado);
     }

@@ -56,7 +56,7 @@ class ConsultorDeProcessoServiceImplTest {
         Processo processo = Instancio.of(Processo.class).create();
         when(processoMapper.paraDominio(processoEntity)).thenReturn(processo);
 
-        consultorDeProcessoService.consultarProcesso(cpfCnpj, status, dataDeAbertura);
+        consultorDeProcessoService.consultarProcessos(cpfCnpj, status, dataDeAbertura);
 
         verify(processoRepository).findAll(any(Specification.class));
     }
@@ -66,7 +66,7 @@ class ConsultorDeProcessoServiceImplTest {
         ProcessoEntity processoEntity = Instancio.of(ProcessoEntity.class).create();
         when(processoRepository.findAll(any(Specification.class))).thenReturn(Collections.singletonList(processoEntity));
 
-        consultorDeProcessoService.consultarProcesso(cpfCnpj, status, dataDeAbertura);
+        consultorDeProcessoService.consultarProcessos(cpfCnpj, status, dataDeAbertura);
 
         verify(processoMapper).paraDominio(argumentCaptor.capture());
         ProcessoEntity processoEnviadoParaMapear = argumentCaptor.getValue();
@@ -82,7 +82,7 @@ class ConsultorDeProcessoServiceImplTest {
         when(processoMapper.paraDominio(processoEntity)).thenReturn(processoMapeado);
         when(processoRepository.findAll(any(Specification.class))).thenReturn(Collections.singletonList(processoEntity));
 
-        Processo processoRetornado = consultorDeProcessoService.consultarProcesso(cpfCnpj, status, dataDeAbertura)
+        Processo processoRetornado = consultorDeProcessoService.consultarProcessos(cpfCnpj, status, dataDeAbertura)
                 .stream().findFirst().orElseThrow();
 
         Assertions.assertEquals(processoMapeado.getId(), processoRetornado.getId());
@@ -94,7 +94,7 @@ class ConsultorDeProcessoServiceImplTest {
     void deve_retornar_erro_caso_nao_exista_processo() {
         when(processoRepository.findAll(any(Specification.class))).thenReturn(new ArrayList());
 
-        Executable action = () -> consultorDeProcessoService.consultarProcesso(cpfCnpj, status, dataDeAbertura);
+        Executable action = () -> consultorDeProcessoService.consultarProcessos(cpfCnpj, status, dataDeAbertura);
 
         Assertions.assertThrows(NoSuchElementException.class, action, "Não foi encontrado o processo.");
     }

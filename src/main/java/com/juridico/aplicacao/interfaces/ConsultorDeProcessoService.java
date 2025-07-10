@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface ConsultorDeProcessoService {
-    List<Processo> consultarProcesso(String cpfCnpj,
-                                     StatusProcesso statusProcesso,
-                                     LocalDate dataDeAbertura);
+    List<Processo> consultarProcessos(String cpfCnpj,
+                                      StatusProcesso statusProcesso,
+                                      LocalDate dataDeAbertura);
 }
