@@ -1,4 +1,4 @@
-package com.juridico.config.excecoes;
+package com.juridico.portaadaptador.in.rest.excecoes;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

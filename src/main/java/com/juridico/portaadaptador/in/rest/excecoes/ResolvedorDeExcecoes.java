@@ -1,6 +1,5 @@
 package com.juridico.portaadaptador.in.rest.excecoes;
 
-import com.juridico.config.excecoes.ExcecaoNaResposta;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

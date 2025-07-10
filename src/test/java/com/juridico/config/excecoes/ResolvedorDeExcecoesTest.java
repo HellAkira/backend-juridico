@@ -1,5 +1,6 @@
 package com.juridico.config.excecoes;
 
+import com.juridico.portaadaptador.in.rest.excecoes.ExcecaoNaResposta;
 import com.juridico.portaadaptador.in.rest.excecoes.ResolvedorDeExcecoes;
 import org.instancio.Instancio;
 import org.junit.jupiter.api.BeforeEach;
