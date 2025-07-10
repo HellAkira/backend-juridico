@@ -37,10 +37,13 @@ Config: Contém as configurações gerais do sistema.
   - Spring Validation
 - **Maven**
 - **Lombok**
+  
 #Test
 - **JUnit 5 + Mockito + Instancio**
+  
 #Banco
 - **PostgreSQL**
+  
 #Documentacao
 - **Astah**
 - **Swagger (OpenAPI)**
