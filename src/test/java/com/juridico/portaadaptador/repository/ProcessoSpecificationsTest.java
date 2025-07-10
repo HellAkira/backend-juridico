@@ -49,7 +49,7 @@ class ProcessoSpecificationsTest {
         Path<Object> cpfPath = mock(Path.class);
         Predicate equalPredicate = mock(Predicate.class);
         Predicate combinedPredicate = mock(Predicate.class);
-        when(root.join("partes")).thenReturn(joinMock);
+        when(root.join("partesEnvolvidas")).thenReturn(joinMock);
         when(joinMock.get("cpfCnpj")).thenReturn(cpfPath);
         when(cb.equal(cpfPath, cpfCnpj)).thenReturn(equalPredicate);
         when(cb.and(any(), eq(equalPredicate))).thenReturn(combinedPredicate);
@@ -57,7 +57,7 @@ class ProcessoSpecificationsTest {
         Specification<ProcessoEntity> specification = ProcessoSpecifications.comFiltro(cpfCnpj, null, null);
         specification.toPredicate(root, query, cb);
 
-        verify(root).join("partes");
+        verify(root).join("partesEnvolvidas");
         verify(joinMock).get("cpfCnpj");
         verify(cb).equal(cpfPath, cpfCnpj);
     }

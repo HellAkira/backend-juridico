@@ -22,7 +22,7 @@ public class ProcessoSpecifications {
                 predicate = criteriaBuilder.and(predicate, criteriaBuilder.equal(root.get("dataDeAbertura"), dataDeAbertura));
             }
             if (cpfCnpj != null && !cpfCnpj.isBlank()) {
-                var joinParte = root.join("partes");
+                var joinParte = root.join("partesEnvolvidas");
                 predicate = criteriaBuilder.and(predicate, criteriaBuilder.equal(joinParte.get("cpfCnpj"), cpfCnpj));
             }
             return predicate;
