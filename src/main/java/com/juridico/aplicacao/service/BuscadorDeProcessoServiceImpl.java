@@ -1,9 +1,9 @@
 package com.juridico.aplicacao.service;
 
-import com.juridico.aplicacao.service.interfaces.BuscadorDeProcessoService;
+import com.juridico.aplicacao.interfaces.BuscadorDeProcessoService;
 import com.juridico.dominio.model.Processo;
-import com.juridico.portaadaptador.entity.ProcessoEntity;
-import com.juridico.portaadaptador.repository.ProcessoRepository;
+import com.juridico.portaadaptador.out.entity.ProcessoEntity;
+import com.juridico.portaadaptador.out.repository.ProcessoRepository;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

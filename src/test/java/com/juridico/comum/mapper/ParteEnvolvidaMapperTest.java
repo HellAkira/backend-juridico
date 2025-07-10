@@ -2,7 +2,8 @@ package com.juridico.comum.mapper;
 
 import com.juridico.aplicacao.dto.ParteEnvolvidaDTO;
 import com.juridico.dominio.model.ParteEnvolvida;
-import com.juridico.portaadaptador.entity.ParteEnvolvidaEntity;
+import com.juridico.portaadaptador.mapper.ParteEnvolvidaMapper;
+import com.juridico.portaadaptador.out.entity.ParteEnvolvidaEntity;
 import org.instancio.Instancio;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

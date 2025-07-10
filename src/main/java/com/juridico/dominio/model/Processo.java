@@ -1,14 +1,13 @@
 package com.juridico.dominio.model;
 
-import com.juridico.comum.enums.StatusProcesso;
-import com.juridico.comum.enums.TipoAcao;
-import com.juridico.comum.enums.TipoParteEnvolvida;
+import com.juridico.dominio.model.enums.StatusProcesso;
+import com.juridico.dominio.model.enums.TipoAcao;
+import com.juridico.dominio.model.enums.TipoParteEnvolvida;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 

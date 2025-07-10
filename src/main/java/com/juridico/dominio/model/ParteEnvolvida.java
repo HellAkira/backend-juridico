@@ -1,6 +1,6 @@
 package com.juridico.dominio.model;
 
-import com.juridico.comum.enums.TipoParteEnvolvida;
+import com.juridico.dominio.model.enums.TipoParteEnvolvida;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

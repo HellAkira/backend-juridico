@@ -1,6 +1,8 @@
 package com.juridico.aplicacao.service.interfaces;
 
-import com.juridico.aplicacao.params.AcaoParams;
+import com.juridico.aplicacao.dto.AcaoParams;
+import com.juridico.aplicacao.interfaces.AtualizadorDeProcessoService;
+import com.juridico.aplicacao.interfaces.BuscadorDeProcessoService;
 import com.juridico.aplicacao.service.CriadorDeAcoesImpl;
 import com.juridico.dominio.model.Acao;
 import com.juridico.dominio.model.Processo;
@@ -59,7 +61,7 @@ class CriadorDeAcoesImplTest {
     }
 
     @Test
-    void deve_atualizar_processo_em_que_a_acao_foi_adicionada(){
+    void deve_atualizar_processo_em_que_a_acao_foi_adicionada() {
         Acao acaoSalva = Instancio.of(Acao.class).create();
         Processo processoBuscado = Instancio.of(Processo.class).create();
         when(buscadorDeProcessoService.buscarPorId(idProcesso)).thenReturn(processoBuscado);
@@ -72,7 +74,7 @@ class CriadorDeAcoesImplTest {
     }
 
     @Test
-    void deve_retornar_acoes_do_processo_salvo(){
+    void deve_retornar_acoes_do_processo_salvo() {
         Acao acaoSalva = Instancio.of(Acao.class).create();
         Processo processoSalvo = Instancio.of(Processo.class).set(field(Processo::getAcoes), List.of(acaoSalva)).create();
         Processo processoBuscado = Instancio.of(Processo.class).create();

@@ -1,8 +1,8 @@
 package com.juridico.aplicacao.service;
 
-import com.juridico.aplicacao.service.interfaces.ArquivadorDeProcessoService;
-import com.juridico.aplicacao.service.interfaces.AtualizadorDeProcessoService;
-import com.juridico.aplicacao.service.interfaces.BuscadorDeProcessoService;
+import com.juridico.aplicacao.interfaces.ArquivadorDeProcessoService;
+import com.juridico.aplicacao.interfaces.AtualizadorDeProcessoService;
+import com.juridico.aplicacao.interfaces.BuscadorDeProcessoService;
 import com.juridico.dominio.model.Processo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

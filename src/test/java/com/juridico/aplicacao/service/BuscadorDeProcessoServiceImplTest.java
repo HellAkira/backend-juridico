@@ -1,8 +1,8 @@
 package com.juridico.aplicacao.service;
 
 import com.juridico.dominio.model.Processo;
-import com.juridico.portaadaptador.entity.ProcessoEntity;
-import com.juridico.portaadaptador.repository.ProcessoRepository;
+import com.juridico.portaadaptador.out.entity.ProcessoEntity;
+import com.juridico.portaadaptador.out.repository.ProcessoRepository;
 import org.instancio.Instancio;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

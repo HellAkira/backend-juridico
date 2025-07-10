@@ -1,8 +1,8 @@
 package com.juridico.aplicacao.service;
 
-import com.juridico.aplicacao.params.ProcessoParams;
-import com.juridico.aplicacao.service.interfaces.AtualizadorDeProcessoService;
-import com.juridico.aplicacao.service.interfaces.BuscadorDeProcessoService;
+import com.juridico.aplicacao.dto.ProcessoParams;
+import com.juridico.aplicacao.interfaces.AtualizadorDeProcessoService;
+import com.juridico.aplicacao.interfaces.BuscadorDeProcessoService;
 import com.juridico.dominio.model.Processo;
 import org.instancio.Instancio;
 import org.junit.jupiter.api.Assertions;
@@ -36,7 +36,7 @@ class EditorDeProcessoServiceImplTest {
     private Processo processo;
 
     @BeforeEach
-    void init(){
+    void init() {
         id = Instancio.of(Long.class).create();
         processo = Instancio.of(Processo.class).create();
     }
@@ -66,7 +66,7 @@ class EditorDeProcessoServiceImplTest {
     }
 
     @Test
-    void deve_retornar_processo_salvo(){
+    void deve_retornar_processo_salvo() {
         ProcessoParams processoDTO = Instancio.of(ProcessoParams.class).create();
         when(buscadorDeProcessoService.buscarPorId(id)).thenReturn(processo);
         when(atualizadorDeProcessoService.atualizar(processo)).thenReturn(processo);

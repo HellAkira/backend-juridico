@@ -1,9 +1,10 @@
 package com.juridico.portaadaptador.rest;
 
 import com.juridico.aplicacao.dto.ParteEnvolvidaDTO;
-import com.juridico.aplicacao.params.ParteEnvolvidaParams;
-import com.juridico.aplicacao.service.interfaces.CriadorDePartesEnvolvidas;
+import com.juridico.aplicacao.dto.ParteEnvolvidaParams;
+import com.juridico.aplicacao.interfaces.CriadorDePartesEnvolvidas;
 import com.juridico.dominio.model.ParteEnvolvida;
+import com.juridico.portaadaptador.in.rest.GerenciarParteEnvolvidasRest;
 import org.instancio.Instancio;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

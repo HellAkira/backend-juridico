@@ -1,6 +1,6 @@
 package com.juridico.aplicacao.dto;
 
-import com.juridico.comum.enums.TipoAcao;
+import com.juridico.dominio.model.enums.TipoAcao;
 import lombok.Data;
 
 import java.time.LocalDateTime;

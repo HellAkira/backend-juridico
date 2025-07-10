@@ -1,6 +1,6 @@
 package com.juridico.aplicacao.dto;
 
-import com.juridico.comum.enums.TipoParteEnvolvida;
+import com.juridico.dominio.model.enums.TipoParteEnvolvida;
 import lombok.Data;
 
 @Data

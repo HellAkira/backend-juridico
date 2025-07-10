@@ -1,7 +1,8 @@
 package com.juridico.portaadaptador.repository;
 
-import com.juridico.comum.enums.StatusProcesso;
-import com.juridico.portaadaptador.entity.ProcessoEntity;
+import com.juridico.dominio.model.enums.StatusProcesso;
+import com.juridico.portaadaptador.out.entity.ProcessoEntity;
+import com.juridico.portaadaptador.out.repository.ProcessoSpecifications;
 import jakarta.persistence.criteria.*;
 import org.instancio.Instancio;
 import org.junit.jupiter.api.BeforeEach;

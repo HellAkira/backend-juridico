@@ -1,12 +1,12 @@
 package com.juridico.aplicacao.service;
 
-import com.juridico.aplicacao.service.interfaces.AtualizadorDeProcessoService;
+import com.juridico.aplicacao.interfaces.AtualizadorDeProcessoService;
 import com.juridico.dominio.model.Processo;
-import com.juridico.comum.mapper.ParteEnvolvidaMapper;
-import com.juridico.portaadaptador.entity.ProcessoEntity;
-import com.juridico.comum.mapper.AcaoMapper;
-import com.juridico.comum.mapper.ProcessoMapper;
-import com.juridico.portaadaptador.repository.ProcessoRepository;
+import com.juridico.portaadaptador.mapper.AcaoMapper;
+import com.juridico.portaadaptador.mapper.ParteEnvolvidaMapper;
+import com.juridico.portaadaptador.mapper.ProcessoMapper;
+import com.juridico.portaadaptador.out.entity.ProcessoEntity;
+import com.juridico.portaadaptador.out.repository.ProcessoRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

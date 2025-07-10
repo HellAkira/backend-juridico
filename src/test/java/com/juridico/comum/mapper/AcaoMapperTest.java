@@ -2,14 +2,16 @@ package com.juridico.comum.mapper;
 
 import com.juridico.aplicacao.dto.AcaoDTO;
 import com.juridico.dominio.model.Acao;
-import com.juridico.portaadaptador.entity.AcaoEntity;
+import com.juridico.portaadaptador.mapper.AcaoMapper;
+import com.juridico.portaadaptador.out.entity.AcaoEntity;
 import org.instancio.Instancio;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.junit.jupiter.api.Assertions .*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @ExtendWith(MockitoExtension.class)
 class AcaoMapperTest {

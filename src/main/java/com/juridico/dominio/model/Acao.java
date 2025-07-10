@@ -1,6 +1,6 @@
 package com.juridico.dominio.model;
 
-import com.juridico.comum.enums.TipoAcao;
+import com.juridico.dominio.model.enums.TipoAcao;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

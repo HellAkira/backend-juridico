@@ -1,6 +1,6 @@
 package com.juridico.dominio.model;
 
-import com.juridico.comum.enums.TipoParteEnvolvida;
+import com.juridico.dominio.model.enums.TipoParteEnvolvida;
 import org.instancio.Instancio;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

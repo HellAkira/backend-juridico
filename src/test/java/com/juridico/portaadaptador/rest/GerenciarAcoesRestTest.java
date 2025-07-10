@@ -1,9 +1,10 @@
 package com.juridico.portaadaptador.rest;
 
 import com.juridico.aplicacao.dto.AcaoDTO;
-import com.juridico.aplicacao.params.AcaoParams;
-import com.juridico.aplicacao.service.interfaces.CriadorDeAcoes;
+import com.juridico.aplicacao.dto.AcaoParams;
+import com.juridico.aplicacao.interfaces.CriadorDeAcoes;
 import com.juridico.dominio.model.Acao;
+import com.juridico.portaadaptador.in.rest.GerenciarAcoesRest;
 import org.instancio.Instancio;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

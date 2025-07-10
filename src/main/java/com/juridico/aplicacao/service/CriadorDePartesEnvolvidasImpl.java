@@ -1,9 +1,9 @@
 package com.juridico.aplicacao.service;
 
-import com.juridico.aplicacao.params.ParteEnvolvidaParams;
-import com.juridico.aplicacao.service.interfaces.AtualizadorDeProcessoService;
-import com.juridico.aplicacao.service.interfaces.BuscadorDeProcessoService;
-import com.juridico.aplicacao.service.interfaces.CriadorDePartesEnvolvidas;
+import com.juridico.aplicacao.dto.ParteEnvolvidaParams;
+import com.juridico.aplicacao.interfaces.AtualizadorDeProcessoService;
+import com.juridico.aplicacao.interfaces.BuscadorDeProcessoService;
+import com.juridico.aplicacao.interfaces.CriadorDePartesEnvolvidas;
 import com.juridico.dominio.model.ParteEnvolvida;
 import com.juridico.dominio.model.Processo;
 import lombok.AllArgsConstructor;

@@ -1,8 +1,8 @@
 package com.juridico.dominio.model;
 
-import com.juridico.comum.enums.StatusProcesso;
-import com.juridico.comum.enums.TipoAcao;
-import com.juridico.comum.enums.TipoParteEnvolvida;
+import com.juridico.dominio.model.enums.StatusProcesso;
+import com.juridico.dominio.model.enums.TipoAcao;
+import com.juridico.dominio.model.enums.TipoParteEnvolvida;
 import org.instancio.Instancio;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

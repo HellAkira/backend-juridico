@@ -1,10 +1,9 @@
 package com.juridico.aplicacao.service;
 
-import com.juridico.aplicacao.params.AcaoParams;
-import com.juridico.aplicacao.service.interfaces.AtualizadorDeProcessoService;
-import com.juridico.aplicacao.service.interfaces.BuscadorDeProcessoService;
-import com.juridico.aplicacao.service.interfaces.CriadorDeAcoes;
-import com.juridico.aplicacao.service.interfaces.SalvadorDeProcesso;
+import com.juridico.aplicacao.dto.AcaoParams;
+import com.juridico.aplicacao.interfaces.AtualizadorDeProcessoService;
+import com.juridico.aplicacao.interfaces.BuscadorDeProcessoService;
+import com.juridico.aplicacao.interfaces.CriadorDeAcoes;
 import com.juridico.dominio.model.Acao;
 import com.juridico.dominio.model.Processo;
 import lombok.AllArgsConstructor;

@@ -1,9 +1,9 @@
 package com.juridico.aplicacao.service;
 
-import com.juridico.aplicacao.service.interfaces.AtualizadorDeProcessoService;
-import com.juridico.aplicacao.service.interfaces.BuscadorDeProcessoService;
-import com.juridico.comum.enums.StatusProcesso;
+import com.juridico.aplicacao.interfaces.AtualizadorDeProcessoService;
+import com.juridico.aplicacao.interfaces.BuscadorDeProcessoService;
 import com.juridico.dominio.model.Processo;
+import com.juridico.dominio.model.enums.StatusProcesso;
 import org.instancio.Instancio;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -29,7 +29,7 @@ class ArquivadorDeProcessoServiceImplTest {
     private ArquivadorDeProcessoServiceImpl arquivadorDeProcessoService;
 
     @Test
-    void deve_buscar_o_processo(){
+    void deve_buscar_o_processo() {
         Long idProcesso = Instancio.of(Long.class).create();
         Processo processo = Instancio.of(Processo.class).set(field(Processo::getStatus), StatusProcesso.ATIVO).create();
         when(buscadorDeProcessoService.buscarPorId(idProcesso)).thenReturn(processo);
@@ -40,7 +40,7 @@ class ArquivadorDeProcessoServiceImplTest {
     }
 
     @Test
-    void deve_arquivar_o_processo(){
+    void deve_arquivar_o_processo() {
         Long idProcesso = Instancio.of(Long.class).create();
         Processo processo = Mockito.mock(Processo.class);
         when(buscadorDeProcessoService.buscarPorId(idProcesso)).thenReturn(processo);
@@ -51,7 +51,7 @@ class ArquivadorDeProcessoServiceImplTest {
     }
 
     @Test
-    void deve_salvar_o_processo_arquivado(){
+    void deve_salvar_o_processo_arquivado() {
         Long idProcesso = Instancio.of(Long.class).create();
         Processo processo = Instancio.of(Processo.class).set(field(Processo::getStatus), StatusProcesso.ATIVO).create();
         when(buscadorDeProcessoService.buscarPorId(idProcesso)).thenReturn(processo);

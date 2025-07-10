@@ -1,6 +1,6 @@
 package com.juridico.dominio.model;
 
-import com.juridico.comum.enums.TipoAcao;
+import com.juridico.dominio.model.enums.TipoAcao;
 import org.instancio.Instancio;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

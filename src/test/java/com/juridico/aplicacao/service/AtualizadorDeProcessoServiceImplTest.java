@@ -1,15 +1,15 @@
 package com.juridico.aplicacao.service;
 
-import com.juridico.comum.mapper.AcaoMapper;
-import com.juridico.comum.mapper.ProcessoMapper;
 import com.juridico.dominio.model.Acao;
 import com.juridico.dominio.model.ParteEnvolvida;
 import com.juridico.dominio.model.Processo;
-import com.juridico.comum.mapper.ParteEnvolvidaMapper;
-import com.juridico.portaadaptador.entity.AcaoEntity;
-import com.juridico.portaadaptador.entity.ParteEnvolvidaEntity;
-import com.juridico.portaadaptador.entity.ProcessoEntity;
-import com.juridico.portaadaptador.repository.ProcessoRepository;
+import com.juridico.portaadaptador.mapper.AcaoMapper;
+import com.juridico.portaadaptador.mapper.ParteEnvolvidaMapper;
+import com.juridico.portaadaptador.mapper.ProcessoMapper;
+import com.juridico.portaadaptador.out.entity.AcaoEntity;
+import com.juridico.portaadaptador.out.entity.ParteEnvolvidaEntity;
+import com.juridico.portaadaptador.out.entity.ProcessoEntity;
+import com.juridico.portaadaptador.out.repository.ProcessoRepository;
 import org.instancio.Instancio;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -67,11 +67,11 @@ class AtualizadorDeProcessoServiceImplTest {
         parteEnvolvidaEntity = Instancio.of(ParteEnvolvidaEntity.class).create();
         processo = Instancio.of(Processo.class)
                 .set(field(Processo::getAcoes), List.of(acao))
-                .set(field(Processo::getPartesEnvolvidas),  List.of(parteEnvolvida))
+                .set(field(Processo::getPartesEnvolvidas), List.of(parteEnvolvida))
                 .create();
         processoEntity = Instancio.of(ProcessoEntity.class)
                 .set(field(ProcessoEntity::getAcoes), List.of(acaoEntity))
-                .set(field(ProcessoEntity::getPartesEnvolvidas),  List.of(parteEnvolvidaEntity))
+                .set(field(ProcessoEntity::getPartesEnvolvidas), List.of(parteEnvolvidaEntity))
                 .create();
     }
 
@@ -111,7 +111,7 @@ class AtualizadorDeProcessoServiceImplTest {
     }
 
     @Test
-    void deve_salvar_acoes_atualizadas(){
+    void deve_salvar_acoes_atualizadas() {
         when(processoRepository.findById(processo.getId())).thenReturn(Optional.of(processoEntity));
         when(acaoMapper.paraEntidade(acao)).thenReturn(acaoEntity);
         when(parteEnvolvidaMapper.paraEntidade(parteEnvolvida)).thenReturn(parteEnvolvidaEntity);
@@ -124,7 +124,7 @@ class AtualizadorDeProcessoServiceImplTest {
     }
 
     @Test
-    void deve_salvar_partes_envolvidas_atualizadas(){
+    void deve_salvar_partes_envolvidas_atualizadas() {
         when(processoRepository.findById(processo.getId())).thenReturn(Optional.of(processoEntity));
         when(acaoMapper.paraEntidade(acao)).thenReturn(acaoEntity);
         when(parteEnvolvidaMapper.paraEntidade(parteEnvolvida)).thenReturn(parteEnvolvidaEntity);

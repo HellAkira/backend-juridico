@@ -1,6 +1,7 @@
 package com.juridico.aplicacao.service.interfaces;
 
-import com.juridico.aplicacao.params.ParteEnvolvidaParams;
+import com.juridico.aplicacao.dto.ParteEnvolvidaParams;
+import com.juridico.aplicacao.interfaces.BuscadorDeProcessoService;
 import com.juridico.aplicacao.service.AtualizadorDeProcessoServiceImpl;
 import com.juridico.aplicacao.service.CriadorDePartesEnvolvidasImpl;
 import com.juridico.dominio.model.ParteEnvolvida;
@@ -65,7 +66,7 @@ class CriadorDeParteEnvolvidaImplTest {
     }
 
     @Test
-    void deve_atualizar_processo_em_que_a_parte_envolvida_foi_adicionada(){
+    void deve_atualizar_processo_em_que_a_parte_envolvida_foi_adicionada() {
         ParteEnvolvida parteEnvolvidaSalva = Instancio.of(ParteEnvolvida.class).create();
         Processo processoBuscado = Instancio.of(Processo.class).create();
         when(buscadorDeProcessoService.buscarPorId(idProcesso)).thenReturn(processoBuscado);
@@ -78,7 +79,7 @@ class CriadorDeParteEnvolvidaImplTest {
     }
 
     @Test
-    void deve_retornar_partes_envolvidas_do_processo_atualizado(){
+    void deve_retornar_partes_envolvidas_do_processo_atualizado() {
         ParteEnvolvida parteEnvolvidaSalva = Instancio.of(ParteEnvolvida.class).create();
         Processo processoSalvo = Instancio.of(Processo.class)
                 .set(field(Processo::getPartesEnvolvidas), List.of(parteEnvolvidaSalva)).create();

@@ -1,7 +1,7 @@
 package com.juridico.aplicacao.service;
 
-import com.juridico.aplicacao.params.ProcessoParams;
-import com.juridico.aplicacao.service.interfaces.SalvadorDeProcesso;
+import com.juridico.aplicacao.dto.ProcessoParams;
+import com.juridico.aplicacao.interfaces.SalvadorDeProcesso;
 import com.juridico.dominio.model.Processo;
 import org.instancio.Instancio;
 import org.junit.jupiter.api.Assertions;

@@ -6,9 +6,12 @@ import com.juridico.aplicacao.dto.ProcessoDTO;
 import com.juridico.dominio.model.Acao;
 import com.juridico.dominio.model.ParteEnvolvida;
 import com.juridico.dominio.model.Processo;
-import com.juridico.portaadaptador.entity.AcaoEntity;
-import com.juridico.portaadaptador.entity.ParteEnvolvidaEntity;
-import com.juridico.portaadaptador.entity.ProcessoEntity;
+import com.juridico.portaadaptador.mapper.AcaoMapper;
+import com.juridico.portaadaptador.mapper.ParteEnvolvidaMapper;
+import com.juridico.portaadaptador.mapper.ProcessoMapper;
+import com.juridico.portaadaptador.out.entity.AcaoEntity;
+import com.juridico.portaadaptador.out.entity.ParteEnvolvidaEntity;
+import com.juridico.portaadaptador.out.entity.ProcessoEntity;
 import org.instancio.Instancio;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -19,8 +22,10 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class ProcessoMapperTest {
@@ -44,7 +49,7 @@ class ProcessoMapperTest {
     private ParteEnvolvidaDTO parteDTO;
 
     @BeforeEach
-    void init(){
+    void init() {
         entidade = Instancio.of(ProcessoEntity.class).create();
         acaoEntity = Instancio.of(AcaoEntity.class).create();
         parteEntity = Instancio.of(ParteEnvolvidaEntity.class).create();

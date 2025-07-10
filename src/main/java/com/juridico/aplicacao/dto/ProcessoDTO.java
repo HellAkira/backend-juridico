@@ -1,6 +1,6 @@
 package com.juridico.aplicacao.dto;
 
-import com.juridico.comum.enums.StatusProcesso;
+import com.juridico.dominio.model.enums.StatusProcesso;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

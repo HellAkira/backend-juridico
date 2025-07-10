@@ -1,11 +1,11 @@
 package com.juridico.aplicacao.service;
 
-import com.juridico.aplicacao.service.interfaces.ConsultorDeProcessoService;
-import com.juridico.comum.enums.StatusProcesso;
+import com.juridico.aplicacao.interfaces.ConsultorDeProcessoService;
 import com.juridico.dominio.model.Processo;
-import com.juridico.comum.mapper.ProcessoMapper;
-import com.juridico.portaadaptador.repository.ProcessoRepository;
-import com.juridico.portaadaptador.repository.ProcessoSpecifications;
+import com.juridico.dominio.model.enums.StatusProcesso;
+import com.juridico.portaadaptador.mapper.ProcessoMapper;
+import com.juridico.portaadaptador.out.repository.ProcessoRepository;
+import com.juridico.portaadaptador.out.repository.ProcessoSpecifications;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
