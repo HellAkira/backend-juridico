@@ -4,10 +4,13 @@ API RESTful para gerenciamento de processos jurídicos, construída em Spring Bo
 
 • Gerenciar processos jurídicos: criar, editar, consultar e arquivar um ou mais
 processos.
+
 • Gerenciar partes envolvidas: cada processo deve permitir o registro de uma ou
 mais partes (autor, réu, advogado).
+
 • Gerenciar ações: registrar ações associadas a um processo (por exemplo,
 petições, audiências, sentenças).
+
 • Status do processo: deve ser possível indicar se o processo está ativo,
 suspenso ou arquivado.
 
