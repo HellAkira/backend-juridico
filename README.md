@@ -56,6 +56,11 @@ mvn clean install
 mvn spring-boot:run
 ```
 
-# Acessar a API
+# Acessar a API LOCALMENTE
 API disponível em: http://localhost:8080
 Documentação Swagger UI: http://localhost:8080/swagger-ui.html
+
+
+# Acessar a Publicada no Railway
+API disponível em: https://backend-juridico-production.up.railway.app
+Documentação Swagger UI: https://backend-juridico-production.up.railway.app/swagger-ui/index.html#/
