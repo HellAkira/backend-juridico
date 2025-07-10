@@ -13,7 +13,7 @@ public class ProcessoSpecifications {
     }
 
     public static Specification<ProcessoEntity> comFiltro(String cpfCnpj, StatusProcesso status, LocalDate dataDeAbertura) {
-        return (root, _, criteriaBuilder) -> {
+        return (root, query, criteriaBuilder) -> {
             Predicate predicate = criteriaBuilder.conjunction();
             if (status != null) {
                 predicate = criteriaBuilder.and(predicate, criteriaBuilder.equal(root.get("status"), status));
