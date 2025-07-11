@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Schema(description = "Parâmetros para um processo")
 public class ProcessoParams {
-    @Schema(description = "Data de abertura do processo", example = "2023-05-15T10:30:00")
+    @Schema(description = "Data de abertura do processo", example = "2023-05-15")
     private LocalDate dataDeAbertura;
     @Schema(description = "Descrição detalhada do caso", example = "O objetivo deste processo é garantir...")
     private String descricaoDoCaso;
